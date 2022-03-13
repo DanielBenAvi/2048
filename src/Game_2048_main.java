@@ -18,16 +18,36 @@ public class Game_2048_main {
 			switch (user) {
 
 			case 4:
-				boardManager.left(board);
+				if (boardManager.leftValid(board) || boardManager.doubleLeft(board)) {
+					boardManager.left(board);
+					boardManager.putRandomNumberInBoard(board);
+				}else {
+					System.out.println("you can`t go left");
+				}
 				break;
 			case 8:
-				boardManager.up(board);
+				if (boardManager.upValid(board) || boardManager.doubleUp(board)) {
+					boardManager.up(board);
+					boardManager.putRandomNumberInBoard(board);
+				}else {
+					System.out.println("you can`t go up");
+				}
 				break;
 			case 6:
-				boardManager.right(board);
+				if (boardManager.rightValid(board) || boardManager.doubleRight(board)) {
+					boardManager.right(board);
+					boardManager.putRandomNumberInBoard(board);
+				}else {
+					System.out.println("you can`t go right");
+				}
 				break;
 			case 2:
-				boardManager.down(board);
+				if (boardManager.downValid(board) || boardManager.doubleDown(board)) {
+					boardManager.down(board);
+					boardManager.putRandomNumberInBoard(board);
+				}else {
+					System.out.println("you can`t go down");
+				}
 				break;
 			default:
 				break;
@@ -37,8 +57,10 @@ public class Game_2048_main {
 			if (boardManager.lostCheck(board)) {
 				System.out.println("You Lost");
 				break;
+			}else if(boardManager.winCheck(board)) {
+				System.out.println("you won");
+				break;
 			}
-			boardManager.putRandomNumberInBoard(board);
 			
 			boardManager.printBoard(board, "Step: " + counter);
 			user = getNumFromUser();
