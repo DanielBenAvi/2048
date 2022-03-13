@@ -1,3 +1,4 @@
+package Model;
 import java.util.Random;
 
 public class BoardManager {
@@ -12,7 +13,7 @@ public class BoardManager {
 		putRandomNumberInBoard(board);
 	}
 
-	public void putRandomNumberInBoard(int[][] b) {
+	public int[][] putRandomNumberInBoard(int[][] b) {
 		x = rand.nextInt(4);
 		y = rand.nextInt(4);
 
@@ -32,6 +33,7 @@ public class BoardManager {
 				y = rand.nextInt(4);
 			}
 		}
+		return b;
 
 	}
 
@@ -57,7 +59,7 @@ public class BoardManager {
 		return board;
 	}
 
-	public void left(int[][] b) {
+	public int[][] left(int[][] b) {
 		System.out.println("left");
 		for (int i = 0; i < b.length; i++) {
 			for (int j = 0; j < b.length; j++) {
@@ -82,9 +84,10 @@ public class BoardManager {
 				}
 			}
 		}
+		return b;
 	}
 
-	public void up(int[][] b) {
+	public int[][] up(int[][] b) {
 		System.out.println("up");
 		for (int i = 0; i < b.length; i++) {
 			for (int j = 0; j < b.length; j++) {
@@ -109,9 +112,10 @@ public class BoardManager {
 				}
 			}
 		}
+		return b;
 	}
 
-	public void right(int[][] b) {
+	public int[][] right(int[][] b) {
 		System.out.println("right");
 		for (int i = 0; i < b.length; i++) {
 			for (int j = b.length - 1; j >= 0; j--) {
@@ -136,9 +140,10 @@ public class BoardManager {
 				}
 			}
 		}
+		return b;
 	}
 
-	public void down(int[][] b) {
+	public int[][] down(int[][] b) {
 		System.out.println("down");
 		for (int i = b.length - 1; i >= 0; i--) {
 			for (int j = 0; j < b.length; j++) {
@@ -163,6 +168,7 @@ public class BoardManager {
 				}
 			}
 		}
+		return b;
 	}
 
 	public boolean lostCheck(int[][] b) {
