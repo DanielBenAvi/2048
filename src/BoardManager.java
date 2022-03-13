@@ -86,22 +86,22 @@ public class BoardManager {
 
 	public void up(int[][] b) {
 		System.out.println("up");
-		for (int i = b.length-1; i >=0; i--) {
-			for (int j = 0; j < b.length; j++){
-				if(!isEmpty(b,i, j)){
-					for(int k = i-1; k >= 0; k--){
-						if (!isEmpty(b, k,j)){
-							if(b[k][j] == b[i][j]){
-								b[k][j]*=2;
+		for (int i = 0; i < b.length; i++) {
+			for (int j = 0; j < b.length; j++) {
+				if (!isEmpty(b, i, j)) {
+					for (int k = i - 1; k >= 0; k--) {
+						if (!isEmpty(b, k, j)) {
+							if (b[k][j] == b[i][j]) {
+								b[k][j] *= 2;
 								b[i][j] = 0;
-							}else{
-								if(k-1 !=i){
-									b[k-1][j] = b[i][j];
+							} else {
+								if (k + 1 != i) {
+									b[k + 1][j] = b[i][j];
 									b[i][j] = 0;
 								}
 							}
 							break;
-						}else if(k == b.length-1){
+						} else if (k == 0) {
 							b[k][j] = b[i][j];
 							b[i][j] = 0;
 						}
@@ -113,10 +113,10 @@ public class BoardManager {
 
 	public void right(int[][] b) {
 		System.out.println("right");
-		for (int i = b.length-1; i >=0; i--) {
-			for (int j = b.length-1; j >=0; j--) {
+		for (int i = 0; i < b.length; i++) {
+			for (int j = b.length-1; j >= 0; j--) {
 				if (!isEmpty(b, i, j)) {
-					for (int k = j + 1; k< b.length; k++) {
+					for (int k = j + 1; k < b.length; k++) {
 						if (!isEmpty(b, i, k)) {
 							if (b[i][k] == b[i][j]) {
 								b[i][k] *= 2;
@@ -140,6 +140,29 @@ public class BoardManager {
 
 	public void down(int[][] b) {
 		System.out.println("down");
+		for (int i = b.length-1; i >=0; i--) {
+			for (int j = 0; j < b.length; j++) {
+				if (!isEmpty(b, i, j)) {
+					for (int k = i + 1; k < b.length; k++) {
+						if (!isEmpty(b, k, j)) {
+							if (b[k][j] == b[i][j]) {
+								b[k][j] *= 2;
+								b[i][j] = 0;
+							} else {
+								if (k - 1 != i) {
+									b[k - 1][j] = b[i][j];
+									b[i][j] = 0;
+								}
+							}
+							break;
+						} else if (k == b.length - 1) {
+							b[k][j] = b[i][j];
+							b[i][j] = 0;
+						}
+					}
+				}
+			}
+		}
 	}
 
 	public boolean lostCheck(int[][] b) {
@@ -156,7 +179,7 @@ public class BoardManager {
 		} else {
 			return false;
 		}
-		
+
 	}
 
 }
