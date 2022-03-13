@@ -84,13 +84,10 @@ public class BoardManager {
 		}
 	}
 
-
 	public void up(int[][] b) {
 		System.out.println("up");
-		//loops on matrix
 		for (int i = b.length-1; i >=0; i--) {
 			for (int j = 0; j < b.length; j++){
-				//checks if cell is empty
 				if(!isEmpty(b,i, j)){
 					for(int k = i-1; k >= 0; k--){
 						if (!isEmpty(b, k,j)){
