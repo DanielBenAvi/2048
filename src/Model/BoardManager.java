@@ -60,7 +60,7 @@ public class BoardManager {
 	}
 
 	public int[][] left(int[][] b) {
-		System.out.println("left");
+		//System.out.println("left");
 		for (int i = 0; i < b.length; i++) {
 			for (int j = 0; j < b.length; j++) {
 				if (!isEmpty(b, i, j)) {
@@ -88,7 +88,7 @@ public class BoardManager {
 	}
 
 	public int[][] up(int[][] b) {
-		System.out.println("up");
+	//	System.out.println("up");
 		for (int i = 0; i < b.length; i++) {
 			for (int j = 0; j < b.length; j++) {
 				if (!isEmpty(b, i, j)) {
@@ -116,7 +116,7 @@ public class BoardManager {
 	}
 
 	public int[][] right(int[][] b) {
-		System.out.println("right");
+	//	System.out.println("right");
 		for (int i = 0; i < b.length; i++) {
 			for (int j = b.length - 1; j >= 0; j--) {
 				if (!isEmpty(b, i, j)) {
@@ -144,7 +144,7 @@ public class BoardManager {
 	}
 
 	public int[][] down(int[][] b) {
-		System.out.println("down");
+		//System.out.println("down");
 		for (int i = b.length - 1; i >= 0; i--) {
 			for (int j = 0; j < b.length; j++) {
 				if (!isEmpty(b, i, j)) {

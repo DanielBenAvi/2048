@@ -10,7 +10,7 @@ public class Model {
 	int[][] board = boardManager.getBoard();
 
 	public Model() {
-		boardManager.printBoard(board, "init board");
+		//boardManager.printBoard(board, "init board");
 
 	}
 
