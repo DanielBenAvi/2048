@@ -1,0 +1,29 @@
+
+
+.label {
+    
+    -fx-label-padding: 10;
+    -fx-font-family: "Ariel";
+    -fx-font-size: 24.0px;
+    -fx-alignment:center; 
+	-fx-text-alignment: center ;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

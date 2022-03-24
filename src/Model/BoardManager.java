@@ -1,4 +1,5 @@
 package Model;
+
 import java.util.Random;
 
 public class BoardManager {
@@ -60,7 +61,7 @@ public class BoardManager {
 	}
 
 	public int[][] left(int[][] b) {
-		//System.out.println("left");
+		// System.out.println("left");
 		for (int i = 0; i < b.length; i++) {
 			for (int j = 0; j < b.length; j++) {
 				if (!isEmpty(b, i, j)) {
@@ -88,7 +89,7 @@ public class BoardManager {
 	}
 
 	public int[][] up(int[][] b) {
-	//	System.out.println("up");
+		// System.out.println("up");
 		for (int i = 0; i < b.length; i++) {
 			for (int j = 0; j < b.length; j++) {
 				if (!isEmpty(b, i, j)) {
@@ -116,7 +117,7 @@ public class BoardManager {
 	}
 
 	public int[][] right(int[][] b) {
-	//	System.out.println("right");
+		// System.out.println("right");
 		for (int i = 0; i < b.length; i++) {
 			for (int j = b.length - 1; j >= 0; j--) {
 				if (!isEmpty(b, i, j)) {
@@ -144,7 +145,7 @@ public class BoardManager {
 	}
 
 	public int[][] down(int[][] b) {
-		//System.out.println("down");
+		// System.out.println("down");
 		for (int i = b.length - 1; i >= 0; i--) {
 			for (int j = 0; j < b.length; j++) {
 				if (!isEmpty(b, i, j)) {
@@ -311,7 +312,7 @@ public class BoardManager {
 		for (int i = 0; i < b.length; i++) {
 			for (int j = 1; j < b.length; j++) {
 				if (!isEmpty(b, i, j)) {
-					if (b[i][j] == b[i][j-1]) {
+					if (b[i][j] == b[i][j - 1]) {
 						flag++;
 					}
 				}
@@ -323,13 +324,13 @@ public class BoardManager {
 			return true;
 		}
 	}
-	
+
 	public boolean doubleDown(int[][] b) {
 		int flag = 0;
 		for (int i = 1; i < b.length; i++) {
 			for (int j = 0; j < b.length; j++) {
 				if (!isEmpty(b, i, j)) {
-					if (b[i][j] == b[i-1][j]) {
+					if (b[i][j] == b[i - 1][j]) {
 						flag++;
 					}
 				}
@@ -345,12 +346,14 @@ public class BoardManager {
 	public boolean winCheck(int[][] b) {
 		for (int i = 0; i < b.length; i++) {
 			for (int j = 0; j < b.length; j++) {
-				if (b[i][j]==2048) {
+				if (b[i][j] == 2048) {
 					return true;
 				}
 			}
 		}
 		return false;
 	}
+
+
 
 }

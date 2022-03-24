@@ -13,6 +13,7 @@ public class mainProgram extends Application {
 		Model model = new Model();
 		View view = new View(primaryStage);
 
+
 		@SuppressWarnings("unused")
 		Controller controller = new Controller(model, view);
 	}

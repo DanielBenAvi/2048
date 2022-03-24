@@ -48,7 +48,7 @@ public class Model {
 			board = boardManager.down(board);
 			board = boardManager.putRandomNumberInBoard(board);
 		} else {
-			System.out.println("you can`t go down");
+			//System.out.println("you can`t go down");
 		}
 		return board;
 	}
@@ -67,7 +67,7 @@ public class Model {
 					boardManager.left(board);
 					boardManager.putRandomNumberInBoard(board);
 				} else {
-					System.out.println("you can`t go left");
+					//System.out.println("you can`t go left");
 				}
 				break;
 			case 8:
@@ -75,7 +75,7 @@ public class Model {
 					boardManager.up(board);
 					boardManager.putRandomNumberInBoard(board);
 				} else {
-					System.out.println("you can`t go up");
+					//System.out.println("you can`t go up");
 				}
 				break;
 			case 6:
@@ -83,7 +83,7 @@ public class Model {
 					boardManager.right(board);
 					boardManager.putRandomNumberInBoard(board);
 				} else {
-					System.out.println("you can`t go right");
+					//System.out.println("you can`t go right");
 				}
 				break;
 			case 2:

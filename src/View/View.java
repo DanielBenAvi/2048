@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -16,9 +17,10 @@ public class View {
 	private Group mainGroup;
 	private Scene mainScene;
 	/// private Stage stage;
-	private Label mainLabel;
-	private VBox v1;
+	private Label mainLabel, scoreLabel1, scoreLabel2;
+	private VBox v1, v2;
 	private Pane pane;
+	private HBox h1;
 
 	public View(Stage primaryStage) {
 		mainGroup = new Group();
@@ -28,11 +30,22 @@ public class View {
 		v1 = new VBox();
 		v1.setPrefSize(300, 450);
 
+		v2 = new VBox();
+		v2.setPrefSize(300, 150);
+
 		mainLabel = new Label("2048");
-		mainLabel.setPrefSize(300, 150);
+		mainLabel.setPrefSize(300, 100);
+
+		h1 = new HBox();
+		scoreLabel1 = new Label("your score is: ");
+		scoreLabel2 = new Label();
+		h1.getChildren().addAll(scoreLabel1, scoreLabel2);
+		h1.getStylesheets().add(getClass().getResource("/CSS/SmallLabel.css").toExternalForm());
+
+		v2.getChildren().addAll(mainLabel, h1);
 
 		pane = new Pane();
-		v1.getChildren().addAll(mainLabel, pane);
+		v1.getChildren().addAll(v2, pane);
 		mainGroup.getChildren().addAll(v1);
 		primaryStage.setResizable(false);
 		primaryStage.setScene(mainScene);
@@ -94,11 +107,21 @@ public class View {
 				if (b[i][j] == 2048) {
 					tempLabel.setStyle("-fx-background-color: green;");
 				}
-				
 
 			}
 		}
+		scoreLabel2.setText(String.valueOf(boardSum(b)));
 		pane.getChildren().addAll(board);
+	}
+
+	private int boardSum(int[][] b) {
+		int sum =0 ;
+		for (int i = 0; i < b.length; i++) {
+			for (int j = 0; j < b.length; j++) {
+				sum = sum + b[i][j];
+			}
+		}
+		return sum;
 	}
 
 }
